@@ -11,6 +11,6 @@ jobs:
   greet:
     runs-on: ubuntu-latest
     steps:
-      - run: 'echo "1: {{ secrets.GITHUB_TOKEN }}"'
-      - run: 'echo "2: ${TEST_VAR}"'
-      - run: 'echo "3: {{ secrets.TEST_VAR }}"'
+      - run: echo {{ secrets.GITHUB_TOKEN }}
+      - run: echo ${TEST_VAR}
+      - run: echo {{ secrets.TEST_VAR }}
