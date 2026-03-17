@@ -1,0 +1,19 @@
+name: Workflow of exercise 3
+run-name: 3rd workflow # Optional
+
+# Events triggering the workflow
+on: 
+  push:
+  workflow_dispatch:
+
+# Group of jobs to run as part of the workflow
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - run: 'echo "1: {{ secrets.GITHUB_TOKEN }}"'
+      - run: 'echo "2: ${TEST_VAR}"'
+      - run: 'echo "3: {{ secrets.TEST_VAR }}"'
+      - name: condition
+        if: ${{ secrets.TEST_VAR == 'ABC' }}
+        run: echo "Conditional message"
