@@ -18,6 +18,6 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install -r requirements-dev.txt
       - name: lint
-        run: python -m black mycode
+        run: python -m black mycode.py
       - name: Test
         run: python -m pytest test_mycode.py
